@@ -86,6 +86,10 @@
 										"filename": {
 											"value": "@{item().api_name}-@{utcNow()}",
 											"type": "Expression"
+										},
+										"folder": {
+											"value": "@replace(item().api_name, '.csv', '')\r\n",
+											"type": "Expression"
 										}
 									}
 								}
