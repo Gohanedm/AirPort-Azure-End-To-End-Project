@@ -115,7 +115,13 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"notebookPath": "/Users/harshalkatekhaye1998@gmail.com/bronze"
+								"notebookPath": "/Users/harshalkatekhaye1998@gmail.com/silver",
+								"baseParameters": {
+									"file": {
+										"value": "@replace(item().api_name, '.csv', '')\r\n",
+										"type": "Expression"
+									}
+								}
 							},
 							"linkedServiceName": {
 								"referenceName": "LS_databricks",
