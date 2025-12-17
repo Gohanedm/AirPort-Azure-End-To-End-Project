@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.apiName",
+						"value": "@activity('Lookup1').output.value",
 						"type": "Expression"
 					},
 					"batchCount": 4,
@@ -58,29 +58,11 @@
 					"dataset": {
 						"referenceName": "DS_AZSQLDB_Metadata",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
-		"parameters": {
-			"apiName": {
-				"type": "array",
-				"defaultValue": [
-					{
-						"api_name": "dim_airports.csv"
-					},
-					{
-						"api_name": "dim_flights.csv"
-					},
-					{
-						"api_name": "dim_passengers.csv"
-					},
-					{
-						"api_name": "fact_bookings.csv"
-					}
-				]
-			}
-		},
 		"annotations": []
 	}
 }
