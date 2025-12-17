@@ -19,7 +19,8 @@
 						"value": "@activity('Lookup1').output.value",
 						"type": "Expression"
 					},
-					"batchCount": 4,
+					"isSequential": false,
+					"batchCount": 1,
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -117,8 +118,8 @@
 							"typeProperties": {
 								"notebookPath": "/Users/harshalkatekhaye1998@gmail.com/silver",
 								"baseParameters": {
-									"file": {
-										"value": "@replace(item().api_name, '.csv', '')\r\n",
+									"input": {
+										"value": "@replace(item().api_name, '.csv', '')\n",
 										"type": "Expression"
 									}
 								}
@@ -126,6 +127,30 @@
 							"linkedServiceName": {
 								"referenceName": "LS_databricks",
 								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Notebook1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "output",
+								"value": {
+									"value": "@activity('Notebook1').output",
+									"type": "Expression"
+								}
 							}
 						}
 					]
@@ -161,6 +186,11 @@
 				}
 			}
 		],
+		"variables": {
+			"output": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
