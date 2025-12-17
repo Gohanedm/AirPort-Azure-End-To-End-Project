@@ -80,7 +80,14 @@
 							"outputs": [
 								{
 									"referenceName": "DS_CSV_Dynamic",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"conatiner": "apiraw",
+										"filename": {
+											"value": "@item().api_name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
