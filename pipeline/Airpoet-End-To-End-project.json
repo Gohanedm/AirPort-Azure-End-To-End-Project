@@ -119,7 +119,7 @@
 								"notebookPath": "/Users/harshalkatekhaye1998@gmail.com/silver",
 								"baseParameters": {
 									"input": {
-										"value": "@pipeline().parameters.name",
+										"value": "@replace(item().api_name,'.csv' , '')",
 										"type": "Expression"
 									}
 								}
