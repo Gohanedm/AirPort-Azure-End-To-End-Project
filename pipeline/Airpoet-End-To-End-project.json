@@ -116,7 +116,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"notebookPath": "/Users/harshalkatekhaye1998@gmail.com/silver",
+								"notebookPath": "/Users/harshalkatekhaye1998@gmail.com/Bronze",
 								"baseParameters": {
 									"input": {
 										"value": "@replace(item().api_name,'.csv' , '')",
