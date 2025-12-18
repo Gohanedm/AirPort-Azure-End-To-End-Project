@@ -121,6 +121,10 @@
 									"input": {
 										"value": "@replace(item().api_name,'.csv' , '')",
 										"type": "Expression"
+									},
+									"col": {
+										"value": "@item().watermark_column",
+										"type": "Expression"
 									}
 								}
 							},
